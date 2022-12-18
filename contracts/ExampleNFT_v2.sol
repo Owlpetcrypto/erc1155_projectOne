@@ -25,7 +25,7 @@ contract ExampleNFT is ERC1155, Ownable {
     //store merkle tree root 
     bytes32 public merkleRoot;
 
-    constructor() ERC1155("https://ipfs.io/ipfs/QmS4zRSb9Pe2HhvAnNQfndmd2i8PbmgNnF8FKyKk7ML4XU/{id}.json") {
+    constructor() ERC1155("https://gateway.pinata.cloud/ipfs/QmS4zRSb9Pe2HhvAnNQfndmd2i8PbmgNnF8FKyKk7ML4XU/{id}.json") {
         name = "Example";
         symbol = "XMPLE";
     }
@@ -44,7 +44,7 @@ contract ExampleNFT is ERC1155, Ownable {
     function uri(uint256 _tokenId) override public pure returns (string memory) {
         return string(
             abi.encodePacked(
-                "https://ipfs.io/ipfs/QmS4zRSb9Pe2HhvAnNQfndmd2i8PbmgNnF8FKyKk7ML4XU/",
+                "https://gateway.pinata.cloud/ipfs/QmS4zRSb9Pe2HhvAnNQfndmd2i8PbmgNnF8FKyKk7ML4XU/",
                 Strings.toString(_tokenId),
                 ".json"
             )
